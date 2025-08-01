@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Director!</title>
+    <!-- Use Tailwind CSS for a clean, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a stylish look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom CSS for animations and fonts */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f3f2;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1a202c; /* Dark text for contrast */
+        }
+
+        /* Confetti Animation */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fce4ec;
+            opacity: 0;
+            animation: confetti-fall 8s linear infinite;
+        }
+
+        .confetti:nth-child(2n) { background-color: #ffebee; }
+        .confetti:nth-child(3n) { background-color: #ffcdd2; }
+        .confetti:nth-child(4n) { background-color: #e91e63; }
+        .confetti:nth-child(5n) { background-color: #d1c4e9; }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Image Hover Effect */
+        .photo-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Hero section background animation */
+        .hero-bg {
+            background-image: radial-gradient(circle at top left, #fbd38d, #f6e0b5, #bee3f8);
+            animation: gradient-shift 15s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <!-- Header Section -->
+    <header class="hero-bg text-center py-20 px-6 sm:px-10 rounded-b-3xl shadow-lg">
+        <h1 class="text-4xl sm:text-6xl font-bold text-gray-800 tracking-wide leading-tight">
+            Happy Birthday, Director <span class="text-pink-600">Dr.Rajendra Patil Sir!</span>
+        </h1>
+        <p class="mt-4 text-xl sm:text-2xl text-gray-600">
+            A celebration of your vision, creativity, and passion.
+        </p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto p-6 md:p-10">
+
+        <!-- Photo Gallery Section -->
+        <section class="my-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800">
+                A Look Back at the Journey
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Photo Card 1 -->
+                <div class="photo-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <img src="/Asssets/gallary-4.jpg" alt="Director at work" class="w-full h-48 object-cover">
+                    <!-- <div class="p-4 text-center">
+                        <p class="text-md text-gray-600 font-semibold">On the set of "Project Alpha"</p>
+                    </div> -->
+                </div>
+                <!-- Photo Card 2 -->
+                <div class="photo-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <img src="/Asssets/gallary-3.jpg" alt="Director with crew" class="w-full h-48 object-cover">
+                    <!-- <div class="p-4 text-center">
+                        <p class="text-md text-gray-600 font-semibold">Celebrating a successful shoot</p>
+                    </div> -->
+                </div>
+                <!-- Photo Card 3 -->
+                <div class="photo-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <img src="/Asssets/gallary-2.jpg" alt="Director's portrait" class="w-full h-48 object-cover">
+                    <!-- <div class="p-4 text-center">
+                        <p class="text-md text-gray-600 font-semibold">A moment of reflection</p>
+                    </div> -->
+                </div>
+                <!-- Photo Card 4 -->
+                <div class="photo-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <img src="/Asssets/gallary1.jpg" alt="Director giving instructions" class="w-full h-48 object-cover">
+                    <!-- <div class="p-4 text-center">
+                        <p class="text-md text-gray-600 font-semibold">Guiding the team with expertise</p>
+                    </div> -->
+                </div>
+                <!-- Add more photo cards here as needed -->
+            </div>
+        </section>
+
+        <!-- Birthday Message Section -->
+        <section class="my-16 bg-white p-8 sm:p-12 rounded-2xl shadow-xl text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">
+                A Message from the Team
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                Dear Dr.Rajendra Patil Sir, your dedication, creativity, and tireless work ethic inspire us all. It's a privilege to work alongside you and learn from your brilliance. We hope your special day is filled with joy, relaxation, and all the things that make you happy. Here's to another year of groundbreaking projects and unforgettable stories!
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 Your Team. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for dynamic confetti animation and image error handling
+        window.onload = function() {
+            // Function to create a single confetti piece
+            function createConfetti() {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.animationDuration = `${3 + Math.random() * 5}s`;
+                confetti.style.animationDelay = `${Math.random()}s`;
+                document.getElementById('confetti-container').appendChild(confetti);
+
+                // Remove confetti after animation ends
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+            }
+
+            // Generate a burst of confetti
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+            // Continue generating confetti at intervals
+            setInterval(() => {
+                for (let i = 0; i < 10; i++) {
+                    createConfetti();
+                }
+            }, 1000);
+
+            // Image error handling
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = () => {
+                    img.src = 'https://placehold.co/600x400/CCCCCC/666666?text=Image+Not+Found';
+                    img.alt = 'Placeholder image due to loading error';
+                };
+            });
+        };
+    </script>
+</body>
+</html>
